@@ -1,4 +1,4 @@
-package com.sample.android_native_google_login_integration;
+package com.sample.android_native_twitter_login_integration;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
@@ -7,8 +7,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-import com.sample.android_native_google_login_integration.javasample.JavaTwitterSignInActivity;
-import com.sample.android_native_google_login_integration.kotlinsample.KotlinTwitterSignInActivity;
+import com.sample.android_native_twitter_login_integration.javasample.JavaTwitterSignInActivity;
+import com.sample.android_native_twitter_login_integration.kotlinsample.KotlinTwitterSignInActivity;
 
 public class MainActivity extends AppCompatActivity {
 

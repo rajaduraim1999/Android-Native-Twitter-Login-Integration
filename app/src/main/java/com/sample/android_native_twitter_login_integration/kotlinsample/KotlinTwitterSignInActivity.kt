@@ -1,4 +1,4 @@
-package com.sample.android_native_google_login_integration.kotlinsample
+package com.sample.android_native_twitter_login_integration.kotlinsample
 
 import android.content.Context
 import android.content.Intent
@@ -10,8 +10,8 @@ import android.webkit.CookieManager
 import android.webkit.CookieSyncManager
 import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
-import com.sample.android_native_google_login_integration.R
-import com.sample.android_native_google_login_integration.javasample.JavaProfileActivity
+import com.sample.android_native_twitter_login_integration.R
+import com.sample.android_native_twitter_login_integration.javasample.JavaProfileActivity
 import com.twitter.sdk.android.core.*
 import com.twitter.sdk.android.core.identity.TwitterAuthClient
 import com.twitter.sdk.android.core.identity.TwitterLoginButton
@@ -48,14 +48,13 @@ class KotlinTwitterSignInActivity : AppCompatActivity(), View.OnClickListener {
             }
         }
 
-        tlbTwitterSignIn!!.setOnClickListener(this)
-        cvTwitterSignIn!!.setOnClickListener(this)
-
+        tlbTwitterSignIn?.setOnClickListener(this)
+        cvTwitterSignIn?.setOnClickListener(this)
     }
 
     private fun initUI() {
-        tlbTwitterSignIn = findViewById(R.id.tlbTwitterSignIn)
-        cvTwitterSignIn = findViewById(R.id.cvTwitterSignIn)
+        tlbTwitterSignIn = findViewById<TwitterLoginButton>(R.id.tlbTwitterSignIn)
+        cvTwitterSignIn = findViewById<CardView>(R.id.cvTwitterSignIn)
     }
 
     override fun onClick(v: View) {
@@ -76,7 +75,7 @@ class KotlinTwitterSignInActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     private fun signIn() {
-        client!!.authorize(this@KotlinTwitterSignInActivity, object : Callback<TwitterSession?>() {
+        client?.authorize(this@KotlinTwitterSignInActivity, object : Callback<TwitterSession?>() {
             override fun success(result: Result<TwitterSession?>) {
                 // Do something with result, which provides a TwitterSession for making API calls
                 signInAuthorize()
@@ -102,7 +101,7 @@ class KotlinTwitterSignInActivity : AppCompatActivity(), View.OnClickListener {
             TAG,
             "success: username : $username id : $id userId : $userId token : $token secret : $secret"
         )
-        client!!.requestEmail(session, object : Callback<String>() {
+        client?.requestEmail(session, object : Callback<String>() {
             override fun success(result: Result<String>) {
                 // Do something with the result, which provides the email address
                 // the email is saved in the result variable 'result.data'
@@ -152,13 +151,14 @@ class KotlinTwitterSignInActivity : AppCompatActivity(), View.OnClickListener {
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-        client!!.onActivityResult(requestCode, resultCode, data)
+        client?.onActivityResult(requestCode, resultCode, data)
     }
 
     fun signOut() {
         val twitterSession = TwitterCore.getInstance().sessionManager.activeSession
         Log.e(
-            TAG, "disconnectFromTwitter: twitterSession : $twitterSession"
+            TAG,
+            "disconnectFromTwitter: twitterSession : $twitterSession"
         )
         if (twitterSession != null) {
             clearCookies(applicationContext)
@@ -182,5 +182,4 @@ class KotlinTwitterSignInActivity : AppCompatActivity(), View.OnClickListener {
             cookieSyncMngr.sync()
         }
     }
-
 }

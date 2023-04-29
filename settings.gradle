@@ -26,5 +26,5 @@ dependencyResolutionManagement {
         maven { url 'https://jitpack.io' }
     }
 }
-rootProject.name = "Android-Native-Google-Login-Integration"
+rootProject.name = "Android-Native-Twitter-Login-Integration"
 include ':app'

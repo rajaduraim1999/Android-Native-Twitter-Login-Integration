@@ -1,4 +1,4 @@
-package com.sample.android_native_google_login_integration;
+package com.sample.android_native_twitter_login_integration;
 
 import org.junit.Test;
 

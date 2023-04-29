@@ -1,4 +1,4 @@
-package com.sample.android_native_google_login_integration;
+package com.sample.android_native_twitter_login_integration;
 
 import android.content.Context;
 
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
     public void useAppContext() {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
-        assertEquals("com.sample.android_native_google_login_integration", appContext.getPackageName());
+        assertEquals("com.sample.android_native_twitter_login_integration", appContext.getPackageName());
     }
 }

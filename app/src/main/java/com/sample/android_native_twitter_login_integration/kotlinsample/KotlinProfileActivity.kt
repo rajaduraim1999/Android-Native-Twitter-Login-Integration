@@ -1,11 +1,11 @@
-package com.sample.android_native_google_login_integration.kotlinsample
+package com.sample.android_native_twitter_login_integration.kotlinsample
 
 import android.os.Bundle
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
-import com.sample.android_native_google_login_integration.R
+import com.sample.android_native_twitter_login_integration.R
 
 class KotlinProfileActivity : AppCompatActivity() {
     var ivUser: ImageView? = null

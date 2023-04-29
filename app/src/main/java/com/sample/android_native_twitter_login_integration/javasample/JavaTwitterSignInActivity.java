@@ -1,4 +1,4 @@
-package com.sample.android_native_google_login_integration.javasample;
+package com.sample.android_native_twitter_login_integration.javasample;
 
 import android.content.Context;
 import android.content.Intent;
@@ -12,7 +12,7 @@ import android.webkit.CookieSyncManager;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
-import com.sample.android_native_google_login_integration.R;
+import com.sample.android_native_twitter_login_integration.R;
 import com.twitter.sdk.android.core.Callback;
 import com.twitter.sdk.android.core.Result;
 import com.twitter.sdk.android.core.Twitter;
